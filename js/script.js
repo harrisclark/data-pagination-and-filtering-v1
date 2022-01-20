@@ -76,14 +76,13 @@ searchBar.addEventListener('keyup', () => {
 
 
 function searchByName(users) {
-   const newArray = [];
    const input = document.getElementById('search').value.toLowerCase();
-   users.filter(user => {
+   const newArray = users.filter(user => {
       const firstName = user.name.first.toLowerCase();
       const lastName = user.name.last.toLowerCase();
       const name = `${firstName} ${lastName}`;
       if (name.includes(input)) {
-         newArray.push(user);
+         return user;
       }
       
    });
